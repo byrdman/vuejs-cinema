@@ -1,16 +1,27 @@
 import Vue from 'vue';
 import './style.scss';
+
 new Vue({
   el: '#app',
   components: {
     'movie-list': {
       template: `<div id="movie-list">
-                    Movie List
-                </div>`
+                    <div v-for="movie in movies">{{ movie }}</div>
+                </div>`,
+      data: function () {
+        return {
+          movies: [
+            {title: 'Pulp Fiction'},
+            {title: 'Home Alone'},
+            {title: 'Austin Powers'}
+          ]
+        };
+      }
     },
     'movie-filter': {
       template: `<div id="movie-filter">
                     Movie Filter
-                </div>`}
+                </div>`
+    }
   }
 });
