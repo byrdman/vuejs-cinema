@@ -7,6 +7,10 @@ function checkFilter(category, title, checked) {
       this[category].splice(index, 1);
     }
   }
-};
+}
 
-export {checkFilter};
+function setDay(day) {
+  this.day = day;
+}
+
+export {checkFilter, setDay};
